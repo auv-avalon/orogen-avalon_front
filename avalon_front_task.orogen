@@ -1,0 +1,19 @@
+name "avalon_front"
+version "0.1"
+
+using_task_library "prosilica_master"
+using_task_library "low_level_driver"
+
+deployment "avalon_front_application" do
+	prosilica = task("ProsilicaMasterTask","prosilica_master::ProsilicaMasterTask").
+		periodic(0.001)
+
+	lowLevel = task("LowLevelTask","low_level_driver::LowLevelTask")
+
+	add_default_logger
+
+	if !corba_enabled?
+		browse prosilica 
+	end
+end
+
