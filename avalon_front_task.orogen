@@ -3,12 +3,14 @@ version "0.1"
 
 using_task_library "prosilica_master"
 using_task_library "low_level_driver"
+using_task_library "frame_multiplexer"
 
 deployment "avalon_front_application" do
 	prosilica = task("ProsilicaMasterTask","prosilica_master::ProsilicaMasterTask").
 		periodic(0.001)
 
 	lowLevel = task("LowLevelTask","low_level_driver::LowLevelTask")
+	mux = task("FrameMultiplexer","frame_multiplexer::Task")
 
 	add_default_logger
 
