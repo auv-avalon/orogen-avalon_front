@@ -6,6 +6,7 @@ using_task_library "prosilica_master"
 using_task_library "low_level_driver"
 using_task_library "frame_multiplexer"
 using_task_library "dynamixel"
+using_task_library "laser"
 
 deployment "avalon_front_application" do
 	prosilica = task("ProsilicaMasterTask","prosilica_master::ProsilicaMasterTask").
@@ -17,6 +18,8 @@ deployment "avalon_front_application" do
 	mux = task("FrameMultiplexer","frame_multiplexer::Task")
 
 	dynamixel = task("DynamixelTask","dynamixel::Task")
+	
+	laser = task("LaserTask","laser::Task")
 
 	add_default_logger
 
