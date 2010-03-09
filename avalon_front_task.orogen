@@ -11,7 +11,9 @@ deployment "avalon_front_application" do
 	prosilica = task("ProsilicaMasterTask","prosilica_master::ProsilicaMasterTask").
 		periodic(0.001)
 
-	lowLevel = task("LowLevelTask","low_level_driver::LowLevelTask")
+	lowLevel = task("LowLevelTask","low_level_driver::LowLevelTask").
+		periodic(0.001)
+
 	mux = task("FrameMultiplexer","frame_multiplexer::Task")
 
 	dynamixel = task("DynamixelTask","dynamixel::Task")
