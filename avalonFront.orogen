@@ -1,30 +1,48 @@
 name "avalon_front"
 version "0.1"
 
-import_types_from 'frame_multiplexer'
-using_task_library "prosilica_master"
 using_task_library "low_level_driver"
-using_task_library "frame_multiplexer"
+using_task_library "camera"
+using_task_library "frame_demultiplexer"
+using_task_library "igc_driver"
 using_task_library "dynamixel"
 using_task_library "laser"
+using_task_library "state_estimator"
 
-deployment "avalon_front_application" do
-	prosilica = task("ProsilicaMasterTask","prosilica_master::ProsilicaMasterTask").
-		periodic(0.001)
-
-	lowLevel = task("LowLevelTask","low_level_driver::LowLevelTask").
-		periodic(0.001)
-
-	mux = task("FrameMultiplexer","frame_multiplexer::Task")
-
-	dynamixel = task("DynamixelTask","dynamixel::Task")
-	
-	laser = task("LaserTask","laser::Task")
-
-	add_default_logger
-
-	if !corba_enabled?
-		browse prosilica 
-	end
+deployment "avalon_front_lowlevel" do
+    task("low_level", "low_level_driver::LowLevelTask").
+        periodic(0.001)
+    add_default_logger
 end
+
+deployment "front_image_acquisition" do
+    task("front_camera", "camera::CameraTask").
+        periodic(0.001)
+
+    task("front_camera_demultiplexer", "frame_demultiplexer::FrameDemultiplexerTask")
+    add_default_logger
+end
+
+deployment "laser_servoing" do
+    task("laser_detector", "laser::Task")
+end
+
+deployment "pose_estimator" do
+    task('pose_estimator', 'state_estimator::Task')
+end
+
+deployment "igc" do
+    task('igc', 'igc_driver::IgcImuTask')
+end
+#	#mux = task("FrameMultiplexer","frame_multiplexer::Task")
+#
+#	#dynamixel = task("DynamixelTask","dynamixel::Task")
+#	#
+#	#laser = task("LaserTask","laser::Task")
+#
+#	add_default_logger
+#
+#	if !corba_enabled?
+#		browse prosilica 
+#	end
 
