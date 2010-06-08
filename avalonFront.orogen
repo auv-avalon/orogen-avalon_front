@@ -12,23 +12,32 @@ using_task_library "state_estimator"
 deployment "avalon_front_lowlevel" do
     task("low_level", "low_level_driver::LowLevelTask").
         periodic(0.001)
+
+    add_default_logger
+end
+
+deployment "bottom_image_acquisition" do
+    task("bottom_camera", "camera::CameraTask")
+
     add_default_logger
 end
 
 deployment "front_image_acquisition" do
-    task("front_camera", "camera::CameraTask").
-        periodic(0.001)
+    task("front_camera", "camera::CameraTask")
 
     task("front_camera_demultiplexer", "frame_demultiplexer::FrameDemultiplexerTask")
+
     add_default_logger
 end
 
 deployment "laser_servoing" do
     task("laser_detector", "laser::Task")
+    add_default_logger
 end
 
 deployment "pose_estimator" do
     task('pose_estimator', 'state_estimator::Task')
+    add_default_logger
 end
 
 deployment "igc" do
