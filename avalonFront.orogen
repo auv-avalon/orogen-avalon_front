@@ -8,8 +8,7 @@ using_task_library "dynamixel"
 using_task_library "laser"
 
 deployment "avalon_front_lowlevel" do
-    task("low_level", "low_level_driver::LowLevelTask").
-        periodic(0.001)
+    task("low_level", "low_level_driver::LowLevelTask")
 
     add_default_logger
 end
