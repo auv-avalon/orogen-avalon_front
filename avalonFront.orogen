@@ -21,8 +21,6 @@ deployment "front_image_acquisition" do
     add_default_logger
 end
 
-end
-
 
 
 #	#mux = task("FrameMultiplexer","frame_multiplexer::Task")
