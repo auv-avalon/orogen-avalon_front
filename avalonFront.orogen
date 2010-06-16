@@ -13,7 +13,7 @@ simple_deployment "bottom_camera", "camera::CameraTask"
 simple_deployment "laser_detector", "laser::Task"
 simple_deployment "pipeline_detector", "pipeline_detector::Task"
 
-deployment "front_image_acquisition" do
+deployment "front_camera" do
     task("front_camera", "camera::CameraTask")
 
     task("front_camera_demultiplexer", "frame_demultiplexer::FrameDemultiplexerTask")
