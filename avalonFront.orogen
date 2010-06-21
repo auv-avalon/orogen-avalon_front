@@ -12,6 +12,8 @@ simple_deployment "low_level", "low_level_driver::LowLevelTask"
 simple_deployment "bottom_camera", "camera::CameraTask"
 simple_deployment "laser_detector", "laser::Task"
 simple_deployment "pipeline_detector", "pipeline_detector::Task"
+simple_deployment("dynamixel", "dynamixel::Task").
+    periodic(0.1)
 
 deployment "front_camera" do
     task("front_camera", "camera::CameraTask")
