@@ -5,7 +5,7 @@ version "0.1"
 using_task_library "camera"
 #using_task_library "orocos_frame_demultiplexer"
 using_task_library "dynamixel"
-using_task_library "sysmon"
+#using_task_library "sysmon"
 
 #using_task_library "pipeline_detector"
 #using_task_library "buoy_detector"
@@ -17,10 +17,10 @@ simple_deployment("dynamixel", "dynamixel::Task").
     periodic(0.1)
 #simple_deployment('buoy_detector', "buoy_detector::BuoyDetectorTask")
 
-deployment "sysmon" do
-    task('fake', 'sysmon::FakeTask')
-    add_default_logger
-end
+#deployment "sysmon" do
+#    task('fake', 'sysmon::FakeTask')
+#    add_default_logger
+#end
 
 deployment "front_camera" do
     task("front_camera", "camera::CameraTask")
