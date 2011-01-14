@@ -8,5 +8,6 @@
     <cpp cflags="" lflags="" />
   </export>
 <depend package="drivers/orogen/camera_prosilica">
+<depend package="drivers/orogen/dynamixel">
 </package>
 
