@@ -9,5 +9,6 @@
   </export>
 <depend package="drivers/orogen/camera_prosilica">
 <depend package="drivers/orogen/dynamixel">
+<depend package="avalon/orogen/testbedServoing">
 </package>
 
