@@ -5,12 +5,19 @@ version "0.1"
 using_task_library "camera"
 #using_task_library "orocos_frame_demultiplexer"
 using_task_library "dynamixel"
+using_task_library "buoy_detector"
+using_task_library "testbed_servoing"
 #using_task_library "sysmon"
 
 #using_task_library "pipeline_detector"
 #using_task_library "buoy_detector"
 
 #simple_deployment "low_level", "low_level_driver::LowLevelTask"
+simple_deployment("buoy_detector", "buoy_detector::Task").
+	periodic(0.1)
+
+simple_deployment "testbed_servoing", "testbed_servoing::Task"
+
 simple_deployment "bottom_camera", "camera::CameraTask"
 #simple_deployment "pipeline_detector", "pipeline_detector::Task"
 simple_deployment("dynamixel", "dynamixel::Task").
