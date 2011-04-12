@@ -28,7 +28,7 @@ simple_deployment("dynamixel", "dynamixel::Task").
 
 deployment "front_camera" do
     task("front_camera", "camera::CameraTask")
-    task("image_preprocessing","image_preprocessing::Task")
+    task("image_preprocessing","image_preprocessing::MonoTask")
     task("buoy_detector","buoy_detector::Task")
     task("testbed_servoing","testbed_servoing::Task")
     task("frame_demultiplexer","frame_demultiplexer::Task")
@@ -55,8 +55,6 @@ end
 
 #    add_default_logger
 #end
-
-
 
 #	#mux = task("FrameMultiplexer","frame_multiplexer::Task")
 #
