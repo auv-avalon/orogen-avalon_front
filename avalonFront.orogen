@@ -1,9 +1,9 @@
 name "avalon_front"
 version "0.1"
 
-#using_task_library "low_level_driver"
+using_task_library "low_level_driver"
 using_task_library "camera"
-#using_task_library "orocos_frame_demultiplexer"
+using_task_library "orocos_frame_demultiplexer"
 using_task_library "dynamixel"
 #using_task_library "buoy_detector"
 #using_task_library "testbed_servoing"
@@ -14,7 +14,7 @@ using_task_library "buoy_detector"
 using_task_library "image_preprocessing"
 using_task_library "testbed_servoing"
 #
-#simple_deployment "low_level", "low_level_driver::LowLevelTask"
+simple_deployment "low_level", "low_level_driver::LowLevelTask"
 #simple_deployment("buoy_detector", "buoy_detector::Task").
 #	periodic(0.1)
 
@@ -31,6 +31,7 @@ deployment "front_camera" do
     task("image_preprocessing","image_preprocessing::Task")
     task("buoy_detector","buoy_detector::Task")
     task("testbed_servoing","testbed_servoing::Task")
+    task("orocos_frame_demultiplexer", "orocos_frame_demultiplexer::Task")
     add_default_logger
 end
 
