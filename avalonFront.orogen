@@ -33,9 +33,9 @@ deployment "front_camera" do
 #    task("testbed_servoing","testbed_servoing::Task")
     task("frame_demultiplexer","frame_demultiplexer::Task")
     task("structured_light","structured_light::Task")
-    task("offshore_pipeline_detector","offshore_pipeline_detector::Task")
     add_default_logger
 end
+
 
 deployment "bottom_camera" do
     task("bottom_camera", "camera::CameraTask")
