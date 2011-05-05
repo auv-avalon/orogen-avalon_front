@@ -2,7 +2,7 @@ name "avalon_front"
 version "0.1"
 
 using_task_library "low_level_driver"
-using_task_library "camera"
+using_task_library "camera_prosilica"
 using_task_library "frame_demultiplexer"
 using_task_library "structured_light"
 using_task_library "dynamixel"
@@ -27,7 +27,7 @@ simple_deployment("dynamixel", "dynamixel::Task").
 #simple_deployment('buoy_detector', "buoy_detector::BuoyDetectorTask")
 
 deployment "front_camera" do
-    task("front_camera", "camera::CameraTask")
+    task("front_camera", "camera_prosilica::Task")
     task("image_preprocessing","image_preprocessing::MonoTask")
 #    task("buoy_detector","buoy_detector::Task")
 #    task("testbed_servoing","testbed_servoing::Task")
@@ -38,7 +38,7 @@ end
 
 
 deployment "bottom_camera" do
-    task("bottom_camera", "camera::CameraTask")
+    task("bottom_camera", "camera_prosilica::Task")
     task("offshore_pipeline_detector","offshore_pipeline_detector::Task")
     add_default_logger
 end
@@ -49,7 +49,7 @@ end
 #end
 
 #deployment "front_camera" do
-#    task("front_camera", "camera::CameraTask")
+#    task("front_camera", "camera_prosilica::Task")
 
  #   task("front_camera_demultiplexer", "frame_demultiplexer::FrameDemultiplexerTask")
 
