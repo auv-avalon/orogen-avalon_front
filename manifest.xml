@@ -7,9 +7,12 @@
   <export>
     <cpp cflags="" lflags="" />
   </export>
-<depend package="avalon/orogen/lowLevelDriver">
-<depend package="drivers/orogen/camera_prosilica">
-<depend package="drivers/orogen/dynamixel">
+<depend package="avalon/orogen/lowLevelDriver"/>
+<depend package="drivers/orogen/camera_prosilica"/>
+<depend package="drivers/orogen/dynamixel"/>
+<depend package="image_processing/orogen/frame_demultiplexer"/>
+<depend package="image_processing/orogen/structured_light"/>
+<depend package="image_processing/orogen/image_preprocessing"/>
 <--depend package="avalon/orogen/testbedServoing"--!>
 </package>
 
