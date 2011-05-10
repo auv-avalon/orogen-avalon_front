@@ -12,7 +12,7 @@ using_task_library "dynamixel"
 
 #using_task_library "pipeline_detector"
 #using_task_library "buoy_detector"
-using_task_library "image_preprocessing"
+#using_task_library "image_preprocessing"
 #using_task_library "testbed_servoing"
 using_task_library "offshore_pipeline_detector"
 #
@@ -28,7 +28,7 @@ simple_deployment("dynamixel", "dynamixel::Task").
 
 deployment "front_camera" do
     task("front_camera", "camera_prosilica::Task")
-    task("image_preprocessing","image_preprocessing::MonoTask")
+#    task("image_preprocessing","image_preprocessing::MonoTask")
 #    task("buoy_detector","buoy_detector::Task")
 #    task("testbed_servoing","testbed_servoing::Task")
     task("frame_demultiplexer","frame_demultiplexer::Task")
