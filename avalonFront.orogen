@@ -15,6 +15,7 @@ using_task_library "dynamixel"
 #using_task_library "image_preprocessing"
 #using_task_library "testbed_servoing"
 using_task_library "offshore_pipeline_detector"
+using_task_library "taskmon"
 #
 simple_deployment "low_level", "low_level_driver::LowLevelTask"
 #simple_deployment("buoy_detector", "buoy_detector::Task").
@@ -42,6 +43,8 @@ deployment "bottom_camera" do
     task("offshore_pipeline_detector","offshore_pipeline_detector::Task")
     add_default_logger
 end
+
+simple_deployment "taskmon_front", "taskmon::Task"
 
 #deployment "sysmon" do
 #    task('fake', 'sysmon::FakeTask')
