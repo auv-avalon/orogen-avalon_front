@@ -6,32 +6,18 @@ using_task_library "camera_prosilica"
 using_task_library "frame_demultiplexer"
 using_task_library "structured_light"
 using_task_library "dynamixel"
-#using_task_library "buoy_detector"
-#using_task_library "testbed_servoing"
-#using_task_library "sysmon"
 
-#using_task_library "pipeline_detector"
-#using_task_library "buoy_detector"
-#using_task_library "image_preprocessing"
-#using_task_library "testbed_servoing"
+using_task_library "buoydetector"
 using_task_library "offshore_pipeline_detector"
 using_task_library "taskmon"
-#
-simple_deployment "low_level", "low_level_driver::LowLevelTask"
-#simple_deployment("buoy_detector", "buoy_detector::Task").
-#	periodic(0.1)
 
-#simple_deployment "testbed_servoing", "testbed_servoing::Task"
+simple_deployment "low_level", "low_level_driver::LowLevelTask"
 
 simple_deployment("dynamixel", "dynamixel::Task").
     periodic(0.1)
-#simple_deployment('buoy_detector', "buoy_detector::BuoyDetectorTask")
 
 deployment "front_camera" do
     task("front_camera", "camera_prosilica::Task")
-#    task("image_preprocessing","image_preprocessing::MonoTask")
-#    task("buoy_detector","buoy_detector::Task")
-#    task("testbed_servoing","testbed_servoing::Task")
     task("frame_demultiplexer","frame_demultiplexer::Task")
     task("structured_light","structured_light::Task")
     add_default_logger
@@ -40,34 +26,10 @@ end
 
 deployment "bottom_camera" do
     task("bottom_camera", "camera_prosilica::Task")
-    task("offshore_pipeline_detector","offshore_pipeline_detector::Task")
     add_default_logger
 end
 
+simple_deployment "pipeline_follower", "offshore_pipeline_detector::Task"
+simple_deployment "buoy_detector", "buoydetector::Task"
 simple_deployment "taskmon_front", "taskmon::Task"
-
-#deployment "sysmon" do
-#    task('fake', 'sysmon::FakeTask')
-#    add_default_logger
-#end
-
-#deployment "front_camera" do
-#    task("front_camera", "camera_prosilica::Task")
-
- #   task("front_camera_demultiplexer", "frame_demultiplexer::FrameDemultiplexerTask")
-
-#    add_default_logger
-#end
-
-#	#mux = task("FrameMultiplexer","frame_multiplexer::Task")
-#
-#	#dynamixel = task("DynamixelTask","dynamixel::Task")
-#	#
-#	#laser = task("LaserTask","laser::Task")
-#
-#	add_default_logger
-#
-#	if !corba_enabled?
-#		browse prosilica 
-#	end
 
