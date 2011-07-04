@@ -3,6 +3,7 @@ version "0.1"
 
 using_task_library "low_level_driver"
 using_task_library "camera_prosilica"
+using_task_library "camera_unicap"
 using_task_library "frame_demultiplexer"
 using_task_library "structured_light"
 using_task_library "dynamixel"
@@ -23,9 +24,20 @@ deployment "front_camera" do
     add_default_logger
 end
 
-
 deployment "bottom_camera" do
     task("bottom_camera", "camera_prosilica::Task")
+    add_default_logger
+end
+
+deployment "left_unicap_camera" do
+    task("left_unicap_camera", "camera_unicap::CameraTask")
+
+    add_default_logger
+end
+
+deployment "right_unicap_camera" do
+    task("right_unicap_camera", "camera_unicap::CameraTask")
+
     add_default_logger
 end
 
