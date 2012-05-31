@@ -18,6 +18,7 @@
 <depend package="avalon/orogen/buoydetector"/>
 <depend package="avalon/orogen/sonar_wall_hough"/>
 <depend package="drivers/orogen/taskmon"/>
+<depend package="drivers/orogen/gpsd_client"/>
 <!--depend package="avalon/orogen/testbedServoing"-->
 </package>
 
