@@ -20,7 +20,7 @@
 <depend package="avalon/orogen/sonar_wall_hough"/>
 <depend package="avalon/orogen/asv_detector"/>
 <depend package="drivers/orogen/taskmon"/>
-<!-- <depend package="drivers/orogen/gpsd_client"/> -->
+<depend package="drivers/orogen/gps"/>
 <!--depend package="avalon/orogen/testbedServoing"-->
 </package>
 
