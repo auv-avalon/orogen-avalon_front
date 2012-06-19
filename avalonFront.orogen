@@ -49,5 +49,5 @@ simple_deployment "buoy_detector", "buoydetector::Task"
 simple_deployment "taskmon_front", "taskmon::Task"
 simple_deployment "sonar_wall_hough", "sonar_wall_hough::Task"
 simple_deployment "asv_detector", "asv_detector::Task"
-simple_deployment "gps", "gps::GPSDTask"
+simple_deployment "gpsd", "gps::GPSDTask"
 
