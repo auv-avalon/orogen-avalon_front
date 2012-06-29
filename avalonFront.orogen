@@ -45,8 +45,8 @@ deployment "right_unicap_camera" do
 end
 
 deployment 'buoy_detector' do
-    task('detector', 'buoy::Detector')
-    task('servoing', 'buoy::Survey')
+    task('buoy_detector', 'buoy::Detector')
+    task('buoy_servoing', 'buoy::Survey')
     add_default_logger
 end
 
