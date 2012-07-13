@@ -13,7 +13,6 @@ using_task_library "buoy"
 using_task_library "offshore_pipeline_detector"
 using_task_library "taskmon"
 using_task_library "sonar_wall_hough"
-using_task_library "asv_detector"
 
 #simple_deployment "low_level", "low_level_driver::LowLevelTask"
 
@@ -54,7 +53,6 @@ end
 simple_deployment "pipeline_follower", "offshore_pipeline_detector::Task"
 simple_deployment "taskmon_front", "taskmon::Task"
 simple_deployment "sonar_wall_hough", "sonar_wall_hough::Task"
-simple_deployment "asv_detector", "asv_detector::Task"
 
 deployment 'avalon_gps' do
     task("gps", "gps::GPSDTask").
