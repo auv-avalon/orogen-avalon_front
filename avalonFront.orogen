@@ -16,10 +16,6 @@ using_task_library "sonar_wall_hough"
 
 #simple_deployment "low_level", "low_level_driver::LowLevelTask"
 
-#Currently only deployment projects does not link
-task_context "Task" do
-end
-
 simple_deployment("dynamixel", "dynamixel::Task").
     periodic(0.1)
 
