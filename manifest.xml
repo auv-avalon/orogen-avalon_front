@@ -7,7 +7,7 @@
   <export>
     <cpp cflags="" lflags="" />
   </export>
-  <!--<depend package="avalon/orogen/lowLevelDriver"/>-->
+<depend package="avalon/orogen/lowLevelDriver"/>
 <depend package="drivers/orogen/camera_prosilica"/>
 <depend package="drivers/orogen/dynamixel"/>
 <depend package="drivers/orogen/camera_unicap"/>

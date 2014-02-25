@@ -1,7 +1,7 @@
 name "avalon_front"
 version "0.1"
 
-#using_task_library "low_level_driver"
+using_task_library "low_level_driver"
 using_task_library "camera_prosilica"
 using_task_library "camera_unicap"
 using_task_library "frame_demultiplexer"
@@ -14,7 +14,7 @@ using_task_library "offshore_pipeline_detector"
 using_task_library "taskmon"
 using_task_library "sonar_wall_hough"
 
-#simple_deployment "low_level", "low_level_driver::LowLevelTask"
+simple_deployment "low_level", "low_level_driver::LowLevelTask"
 
 simple_deployment("dynamixel", "dynamixel::Task").
     periodic(0.1)
