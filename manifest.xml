@@ -11,6 +11,7 @@
 <depend package="drivers/orogen/camera_prosilica"/>
 <depend package="drivers/orogen/dynamixel"/>
 <depend package="drivers/orogen/camera_unicap"/>
+<depend package="avalon/orogen/lights"/>
 <depend package="image_processing/orogen/frame_demultiplexer"/>
 <depend package="image_processing/orogen/structured_light"/>
 <depend package="image_processing/orogen/image_preprocessing"/>
