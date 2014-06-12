@@ -20,7 +20,6 @@
 <depend package="image_processing/orogen/line_scanner"/>
 <depend package="avalon/orogen/buoy"/>
 <depend package="auv_avalon/orogen/sonar_wall_hough"/>
-<depend package="avalon/orogen/asv_detector"/>
 <depend package="drivers/orogen/taskmon"/>
 <depend package="drivers/orogen/gps"/>
 <!--depend package="avalon/orogen/testbedServoing"-->
