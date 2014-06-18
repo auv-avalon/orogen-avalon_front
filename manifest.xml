@@ -11,6 +11,7 @@
 <depend package="auv_avalon/orogen/lights"/>
 <depend package="auv_avalon/orogen/low_level_driver"/>
 <depend package="drivers/orogen/camera_prosilica"/>
+<depend package="drivers/orogen/video_streamer_vlc"/>
 <depend package="drivers/orogen/dynamixel"/>
 <depend package="drivers/orogen/camera_unicap"/>
 <depend package="image_processing/orogen/frame_demultiplexer"/>

@@ -16,6 +16,7 @@ using_task_library "sonar_wall_hough"
 using_task_library "lights"
 using_task_library "line_scanner"
 using_task_library "image_preprocessing"
+using_task_library "video_streamer_vlc"
 
 simple_deployment "blur", "image_preprocessing::HSVSegmentationAndBlur"
 
@@ -24,17 +25,15 @@ simple_deployment "low_level", "low_level_driver::LowLevelTask"
 simple_deployment("dynamixel", "dynamixel::Task").
     periodic(0.1)
 
-deployment "front_camera" do
+deployment "camera" do
     task("front_camera", "camera_prosilica::Task")
+    task("bottom_camera", "camera_prosilica::Task")
     task("frame_demultiplexer","frame_demultiplexer::Task")
+    task("vlc_converter","video_streamer_vlc::Task")
     task("structured_light","structured_light::Task")
     add_default_logger
 end
 
-deployment "bottom_camera" do
-    task("bottom_camera", "camera_prosilica::Task")
-    add_default_logger
-end
 
 deployment "left_unicap_camera" do
     task("left_unicap_camera", "camera_unicap::CameraTask")
