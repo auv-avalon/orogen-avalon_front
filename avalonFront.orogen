@@ -29,7 +29,7 @@ deployment "camera" do
     task("front_camera", "camera_prosilica::Task")
     task("bottom_camera", "camera_prosilica::Task")
     task("frame_demultiplexer","frame_demultiplexer::Task")
-    task("vlc_converter","video_streamer_vlc::Task")
+    task("vlc_converter","video_streamer_vlc::Streamer")
     task("structured_light","structured_light::Task")
     add_default_logger
 end
