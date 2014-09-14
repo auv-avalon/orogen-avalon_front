@@ -10,6 +10,7 @@
 <depend package="image_processing/orogen/image_preprocessing"/>
 <depend package="auv_avalon/orogen/lights"/>
 <depend package="auv_avalon/orogen/low_level_driver"/>
+<depend package ="avalon/orogen/structure_servoing"/>
 <depend package="drivers/orogen/camera_prosilica"/>
 <depend package="drivers/orogen/video_streamer_vlc"/>
 <depend package="drivers/orogen/dynamixel"/>
