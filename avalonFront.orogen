@@ -20,8 +20,6 @@ using_task_library "lights"
 using_task_library "image_preprocessing"
 using_task_library "video_streamer_vlc"
 
-simple_deployment "blur", "image_preprocessing::HSVSegmentationAndBlur"
-
 simple_deployment "low_level", "low_level_driver::LowLevelTask"
 
 simple_deployment("dynamixel", "dynamixel::Task").
