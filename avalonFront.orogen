@@ -19,6 +19,7 @@ using_task_library "lights"
 #using_task_library "line_scanner"
 using_task_library "image_preprocessing"
 using_task_library "video_streamer_vlc"
+using_task_library "structure_reconstruction"
 
 simple_deployment "low_level", "low_level_driver::LowLevelTask"
 
@@ -39,6 +40,7 @@ deployment "stucture" do
     task("hsv_segm","image_preprocessing::HSVSegmentationAndBlur") 
     task("structure_servoing","structure_servoing::Task")
     task("structure_alignment","structure_servoing::Alignment")
+    task("structure_reconstruction", "structure_reconstruction::Task")
 end
 
 deployment "left_unicap_camera" do
