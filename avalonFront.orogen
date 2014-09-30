@@ -57,6 +57,7 @@ end
 
 deployment 'buoy_detector' do
     task('buoy_detector', 'buoy::Detector')
+    task('buoy_detector2', 'buoy::Detector2')
     task('buoy_servoing', 'buoy::Survey')
     task('buoy_on_wall', 'buoy::ServoingOnWall')
     add_default_logger
